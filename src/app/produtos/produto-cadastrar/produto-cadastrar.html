@@ -1,0 +1,19 @@
+
+<label for="nome">Nome</label>
+<input type="text" [(ngModel)]="produto().nome" 
+    id="nome" placeholder="Digite o nome do produto">
+
+<label for="estoque">Estoque</label>
+<input type="number" [(ngModel)]="produto().estoque" 
+id="estoque" placeholder="Digite a quantidade de estoque do produto">
+
+<label for="preco-unitario">Preço unitário</label>
+<input type="number" [(ngModel)]="produto().preco" 
+id="preco-unitario" placeholder="Digite o preço unitário do produto">
+
+@if(produto().estoque !== null && produto().preco !== null){
+    <span>Total: R$ {{(produto().estoque! * produto().preco!).toFixed(2).replace(".", ",")}}</span>
+}
+
+
+<button (click)="salvar()">Salvar</button>

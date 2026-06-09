@@ -1,0 +1,38 @@
+<h1>Produtos</h1>
+
+<a routerLink="/produtos/cadastrar" class="cadastrar">Cadastrar Produto</a>
+
+<span>Qtd produtos: <span class="quantidade">{{produtos().length}}</span></span>
+
+<table>
+    <thead>
+        <th>Nome</th>
+        <th>Estoque</th>
+        <th>Preço Unitário</th>
+        <th>Total</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <!-- 
+        for (let i = 0; i < produtos.length; i++){
+            let produto = produtos[i];
+        }
+        -->
+        @for(produto of produtos(); track produto.id){
+
+            <tr>
+                <td>{{produto.nome}}</td>
+                <td>{{produto.estoque}}</td>
+                <td>R$ {{produto.preco!.toFixed(2)}}</td>
+                <td>R$ {{(produto.estoque! * produto.preco!).toFixed(2)}}</td>
+                <td>
+                    <a class="editar" routerLink="/produtos/editar/{{produto.id}}">Editar</a>
+                    <button class="apagar" (click)="apagar(produto.id)">Apagar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<span>Total: <span class="total">R$ {{total()}}</span></span>

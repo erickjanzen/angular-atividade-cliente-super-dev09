@@ -14,7 +14,10 @@
 
     <button (click)="apresentarNomeCompleto()">Apresentar nome completo</button>
 
-    <p>Valor digitado no campo: {{nome()}}</p>
+    <!-- Apresentar o p somente quando nome completo estiver definido -->
+    @if(resultadoNomeCompleto !== ""){
+        <p>Nome completo: {{resultadoNomeCompleto}}</p>
+    }
 </div>
 
 <h2>Nossa calculadora</h2>
