@@ -7,6 +7,7 @@ import { ProdutoListar } from './produtos/produto-listar/produto-listar';
 import { ProdutoEditar } from './produtos/produto-editar/produto-editar';
 import { ClienteCadastrar } from './cliente/cliente-cadastrar/cliente-cadastrar';
 import { Routes } from '@angular/router';
+import { ClienteListar } from './cliente/cliente-listar/cliente-listar';
 
 export const routes: Routes = [
     { path: "cidade/blumenau", loadComponent: () => CidadeBlumenau},
@@ -15,5 +16,6 @@ export const routes: Routes = [
     { path: "produtos/cadastrar", loadComponent: () => ProdutoCadastrar },
     { path: "produtos", loadComponent: () => ProdutoListar},
     { path: "produtos/editar/:id", loadComponent: () => ProdutoEditar},
-    { path: "clientes/cadastrar", loadComponent: () => ClienteCadastrar}
+    { path: "clientes/cadastrar", loadComponent: () => ClienteCadastrar},
+    { path: "clientes", loadComponent: () => ClienteListar}
 ];

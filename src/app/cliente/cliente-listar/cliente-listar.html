@@ -1,1 +1,34 @@
-<p>cliente-listar works!</p>
+<h1>Clientes</h1>
+
+<a routerLink="/cliente/cadastrar" class="cadastrar">Cadastrar cliente</a>
+
+<span>Qtd produtos: <span class="quantidade">{{clientes().length}}</span></span>
+
+<table>
+    <thead>
+        <th>Nome</th>
+        <th>Estoque</th>
+        <th>Preço Unitário</th>
+        <th>Total</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <!-- 
+        for (let i = 0; i < produtos.length; i++){
+            let produto = produtos[i];
+        }
+        -->
+        @for(cliente of clientes(); track cliente.id){
+
+            <tr>
+                <td>{{cliente.nome}}</td>
+                <td>{{cliente.email}}</td>
+                <td>R$ {{cliente.telefone}}</td>
+                <td>
+                    <a class="editar" routerLink="/produtos/editar/{{cliente.id}}">Editar</a>
+                    <button class="apagar" (click)="apagar(cliente.id)">Apagar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
