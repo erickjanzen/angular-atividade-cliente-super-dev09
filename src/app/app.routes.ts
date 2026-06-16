@@ -17,5 +17,5 @@ export const routes: Routes = [
     { path: "produtos", loadComponent: () => ProdutoListar},
     { path: "produtos/editar/:id", loadComponent: () => ProdutoEditar},
     { path: "clientes/cadastrar", loadComponent: () => ClienteCadastrar},
-    { path: "clientes", loadComponent: () => ClienteListar}
+    { path: "clientes/listar", loadComponent: () => ClienteListar}
 ];
