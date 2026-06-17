@@ -4,6 +4,7 @@ import { ClienteModel } from '../../models/cliente.model';
 
 @Component({
   selector: 'app-cliente-listar',
+  standalone: true,
   imports: [RouterLink],
   templateUrl: './cliente-listar.html',
   styleUrl: './cliente-listar.scss',
@@ -16,7 +17,7 @@ export class ClienteListar {
   }
 
   carregarClientes(): void {
-    // Carregando do localStorage os produtos
+    // Carregando do localStorage os clientes
     const clientesString = localStorage.getItem("clientes");
     if (clientesString === null) {
       return;
@@ -30,16 +31,16 @@ export class ClienteListar {
   }
 
   apagar(id: string): void {
-    /*for (let i = 0; i < produtos.length; i++){
-        let produto = produtos[i];
+    /*for (let i = 0; i < clientes.length; i++){
+        let cliente = clientes[i];
     } */
-    // this.produtos().forEach((produto, i) => {
-    //   if(produto.id === id){
-    //     this.produtos().splice(i, 1);
+    // this.clientes().forEach((cliente, i) => {
+    //   if(cliente.id === id){
+    //     this.clientes().splice(i, 1);
 
-    //     const produtosString = JSON.stringify(this.produtos());
+    //     const clientesString = JSON.stringify(this.clientes());
 
-    //     localStorage.setItem("produtos", produtosString);
+    //     localStorage.setItem("clientes", clientesString);
     //     return;
     //   }
     // })

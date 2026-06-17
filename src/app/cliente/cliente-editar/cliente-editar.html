@@ -1,0 +1,17 @@
+<h1>Editar cliente</h1>
+
+<label for="nome">Nome</label>
+<input type="text" [(ngModel)]="cliente().nome" 
+    id="nome" placeholder="Digite o nome do cliente">
+
+<label for="email">Email</label>
+<input type="number" [(ngModel)]="cliente().email" 
+id="email" placeholder="Digite o email do cliente">
+
+<label for="telefone">Telefone</label>
+<input type="tel" [(ngModel)]="cliente().telefone" 
+id="telefone" placeholder="Digite o telefone do cliente">
+
+<button (click)="salvar()">Salvar</button>
+
+<a routerLink="/clientes/listar">Lista de clientes</a>
